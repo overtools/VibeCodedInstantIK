@@ -16,7 +16,7 @@ bl_info = {
     "author" : "Sxlar3d, Tevtongermany", 
     "description" : "Creates A Ik Rig For Overwatch Models, quick note IK and FK switch might not work but if they do ig its good",
     "blender" : (4, 0, 0),
-    "version" : (1, 2, 0),
+    "version" : (1, 3, 0),
     "location" : "",
     "warning" : "",
     "doc_url": "", 
