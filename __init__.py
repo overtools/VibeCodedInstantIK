@@ -12,10 +12,10 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 bl_info = {
-    "name" : "Overwatch Instant Ik",
-    "author" : "Sxlar3d", 
-    "description" : "Creates A Ik Rig For Overwatch Models",
-    "blender" : (3, 0, 0),
+    "name" : "Overwatch Instant Ik Fix made by Tevtongermany for blender 4.0",
+    "author" : "Sxlar3d, Tevtongermany", 
+    "description" : "Creates A Ik Rig For Overwatch Models, quick note IK and FK switch might not work but if they do ig its good",
+    "blender" : (4, 0, 0),
     "version" : (1, 2, 0),
     "location" : "",
     "warning" : "",
@@ -156,7 +156,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -189,7 +189,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             }
         )
         #Move extruded bone
-        bpy.ops.transform.translate(value=(0, 0.0981695, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0.0981695, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "elbow_l.001"
@@ -197,7 +197,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         edit_bones["elbow_l.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(0, 0.881883, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0.881883, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_arm_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -206,9 +206,9 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         # Select the end point of the bone
         edit_bones['calf_l'].select_tail = True
         #Extrude Calf_l
-        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),   "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Move extruded bone
-        bpy.ops.transform.translate(value=(0, -0.141364, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, -0.141364, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "calf_l.001"
@@ -216,7 +216,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         edit_bones["calf_l.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Move the calf_l.001
-        bpy.ops.transform.translate(value=(0, 1.85873, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 1.85873, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_leg_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -225,9 +225,9 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         # Select the end point of the bone
         edit_bones['back_calf_r'].select_tail = True
         #Extrude back_calf_r
-        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),   "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Move extruded bone
-        bpy.ops.transform.translate(value=(0, 0.147272, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0.147272, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "back_calf_r.001"
@@ -235,7 +235,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         edit_bones["back_calf_r.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Move the back_calf_r.001
-        bpy.ops.transform.translate(value=(0, 1.3125, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 1.3125, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_back_leg_r"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -244,9 +244,9 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         # Select the end point of the bone
         edit_bones['back_calf_l'].select_tail = True
         #Extrude back_calf_l
-        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),   "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Move extruded bone
-        bpy.ops.transform.translate(value=(0, 0.189511, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0.189511, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "back_calf_l.001"
@@ -254,7 +254,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         edit_bones["back_calf_l.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Move the back_calf_l.001
-        bpy.ops.transform.translate(value=(0, 1.29409, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 1.29409, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_back_leg_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -282,7 +282,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -344,7 +344,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -405,7 +405,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -440,7 +440,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         # Translate the object along the Y axis
         bpy.ops.transform.translate(
             value=(0, 0.0834512, 0),
-            orient_axis_ortho='X',
+             
             orient_type='GLOBAL',
             orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)),
             orient_matrix_type='GLOBAL',
@@ -465,7 +465,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         # Translate the object
         bpy.ops.transform.translate(
             value=(0, 0.894303, 0),
-            orient_axis_ortho='X',
+             
             orient_type='GLOBAL',
             orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)),
             orient_matrix_type='GLOBAL',
@@ -493,7 +493,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -526,7 +526,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             }
         )
         # Perform the translate operation
-        bpy.ops.transform.translate(value=(-0, -0.14376, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.14376, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "calf_r.001"
@@ -534,7 +534,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
         edit_bones["calf_r.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(0, 1.86382, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 1.86382, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_leg_r"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -560,7 +560,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -622,7 +622,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -684,7 +684,7 @@ class SNA_OT_Create_Orisa_Rig_6B0F4(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -1244,7 +1244,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -1277,7 +1277,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             }
         )
         #Move extruded bone
-        bpy.ops.transform.translate(value=(0, 0.0981695, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0.0981695, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "elbow_l.001"
@@ -1285,7 +1285,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         edit_bones["elbow_l.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(0, 0.881883, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0.881883, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_arm_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -1298,7 +1298,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -1331,7 +1331,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             }
         )
         #Move extruded bone
-        bpy.ops.transform.translate(value=(-0, -0.0350553, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.0350553, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "bone_0016.001"
@@ -1339,8 +1339,8 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         edit_bones["bone_0016.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(-0, -0.344345, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
-        bpy.ops.transform.translate(value=(-0, -0, -0.0132145), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.344345, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0, -0.0132145),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "eye_follow"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -1359,9 +1359,9 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         # Switch to edit mode
         bpy.ops.object.mode_set(mode='EDIT')
         # Duplicate the bone
-        bpy.ops.armature.duplicate_move(ARMATURE_OT_duplicate={"do_flip_names":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.duplicate_move(ARMATURE_OT_duplicate={"do_flip_names":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),   "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(-0.0316693, -0, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0.0316693, -0, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "eye_follow_r"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["eye_follow"]
@@ -1380,9 +1380,9 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         # Switch to edit mode
         bpy.ops.object.mode_set(mode='EDIT')
         # Duplicate the bone
-        bpy.ops.armature.duplicate_move(ARMATURE_OT_duplicate={"do_flip_names":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.duplicate_move(ARMATURE_OT_duplicate={"do_flip_names":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),   "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(0.0631107, 0, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0.0631107, 0, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "eye_follow_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["eye_follow"]
@@ -1391,9 +1391,9 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         # Select the end point of the bone
         edit_bones['calf_l'].select_tail = True
         #Extrude Calf_l
-        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),   "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Move extruded bone
-        bpy.ops.transform.translate(value=(0, -0.141364, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, -0.141364, 0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "calf_l.001"
@@ -1401,7 +1401,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         edit_bones["calf_l.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Move the calf_l.001
-        bpy.ops.transform.translate(value=(-0, -0.965847, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.965847, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_leg_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -1427,7 +1427,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -1489,7 +1489,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -1550,7 +1550,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -1585,7 +1585,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         # Translate the object along the Y axis
         bpy.ops.transform.translate(
             value=(0, 0.0834512, 0),
-            orient_axis_ortho='X',
+             
             orient_type='GLOBAL',
             orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)),
             orient_matrix_type='GLOBAL',
@@ -1610,7 +1610,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         # Translate the object
         bpy.ops.transform.translate(
             value=(0, 0.894303, 0),
-            orient_axis_ortho='X',
+             
             orient_type='GLOBAL',
             orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)),
             orient_matrix_type='GLOBAL',
@@ -1638,7 +1638,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -1671,7 +1671,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             }
         )
         # Perform the translate operation
-        bpy.ops.transform.translate(value=(-0, -0.14376, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.14376, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "calf_r.001"
@@ -1679,7 +1679,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
         edit_bones["calf_r.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(-0, -0.972968, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.972968, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_leg_r"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -1705,7 +1705,7 @@ class SNA_OT_Create_Junkrat_Rig_Af672(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -2367,7 +2367,6 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -2400,7 +2399,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             }
         )
         #Move extruded bone
-        bpy.ops.transform.translate(value=(0, 0.0981695, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0.0981695, 0),  orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "elbow_l.001"
@@ -2408,7 +2407,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         edit_bones["elbow_l.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(0, 0.881883, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0.881883, 0), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_arm_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -2421,7 +2420,6 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -2454,7 +2452,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             }
         )
         #Move extruded bone
-        bpy.ops.transform.translate(value=(-0, -0.0350553, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.0350553, -0),  orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "bone_0016.001"
@@ -2462,8 +2460,8 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         edit_bones["bone_0016.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(-0, -0.344345, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
-        bpy.ops.transform.translate(value=(-0, -0, -0.0132145), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.344345, -0),  orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0, -0.0132145),  orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "eye_follow"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -2482,9 +2480,9 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         # Switch to edit mode
         bpy.ops.object.mode_set(mode='EDIT')
         # Duplicate the bone
-        bpy.ops.armature.duplicate_move(ARMATURE_OT_duplicate={"do_flip_names":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.duplicate_move(ARMATURE_OT_duplicate={"do_flip_names":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),  "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(-0.0316693, -0, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0.0316693, -0, -0),  orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "eye_follow_r"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["eye_follow"]
@@ -2503,9 +2501,9 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         # Switch to edit mode
         bpy.ops.object.mode_set(mode='EDIT')
         # Duplicate the bone
-        bpy.ops.armature.duplicate_move(ARMATURE_OT_duplicate={"do_flip_names":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.duplicate_move(ARMATURE_OT_duplicate={"do_flip_names":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),   "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(0.0631107, 0, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0.0631107, 0, 0),  orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(True, False, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "eye_follow_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["eye_follow"]
@@ -2514,9 +2512,9 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         # Select the end point of the bone
         edit_bones['calf_l'].select_tail = True
         #Extrude Calf_l
-        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+        bpy.ops.armature.extrude_move(ARMATURE_OT_extrude={"forked":False}, TRANSFORM_OT_translate={"value":(0, 0, 0),  "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_elements":{'INCREMENT'}, "use_snap_project":False, "snap_target":'CLOSEST', "use_snap_self":True, "use_snap_edit":True, "use_snap_nonedit":True, "use_snap_selectable":False, "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
         # Move extruded bone
-        bpy.ops.transform.translate(value=(0, -0.141364, 0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, -0.141364, 0),  orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "calf_l.001"
@@ -2524,7 +2522,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         edit_bones["calf_l.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Move the calf_l.001
-        bpy.ops.transform.translate(value=(-0, -0.965847, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.965847, -0),  orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_leg_l"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -2550,7 +2548,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -2612,7 +2610,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -2673,7 +2671,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -2708,7 +2706,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         # Translate the object along the Y axis
         bpy.ops.transform.translate(
             value=(0, 0.0834512, 0),
-            orient_axis_ortho='X',
+             
             orient_type='GLOBAL',
             orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)),
             orient_matrix_type='GLOBAL',
@@ -2733,7 +2731,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         # Translate the object
         bpy.ops.transform.translate(
             value=(0, 0.894303, 0),
-            orient_axis_ortho='X',
+             
             orient_type='GLOBAL',
             orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)),
             orient_matrix_type='GLOBAL',
@@ -2761,7 +2759,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             ARMATURE_OT_extrude={"forked":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -2794,7 +2792,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             }
         )
         # Perform the translate operation
-        bpy.ops.transform.translate(value=(-0, -0.14376, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.14376, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         bpy.ops.armature.select_all(action='DESELECT')
         # Select the bone named "calf_r.001"
@@ -2802,7 +2800,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
         edit_bones["calf_r.001"].select_tail = True
         bpy.context.active_bone.use_connect = False
         # Translate the selected bone
-        bpy.ops.transform.translate(value=(-0, -0.972968, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0.972968, -0),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         bpy.context.active_bone.name = "pole_leg_r"
         active_bone = bpy.context.active_bone
         active_bone.parent = edit_bones["root"]
@@ -2828,7 +2826,7 @@ class SNA_OT_Create_Rig_505A9(bpy.types.Operator):
             ARMATURE_OT_duplicate={"do_flip_names":False},
             TRANSFORM_OT_translate={
                 "value":(0, 0, 0),
-                "orient_axis_ortho":'X',
+                 
                 "orient_type":'GLOBAL',
                 "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)),
                 "orient_matrix_type":'GLOBAL',
@@ -3389,7 +3387,7 @@ class SNA_OT_Fix_F_Legs_92244(bpy.types.Operator):
         bone = obj.pose.bones.get("ik_foot_r")
         if bone:
             bone.bone.select = True
-        bpy.ops.transform.translate(value=(0, 0, 0.212684), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0, 0.212684),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         for bone in obj.pose.bones:
             bone.bone.select = False
@@ -3430,7 +3428,7 @@ class SNA_OT_Fix_F_Legs_92244(bpy.types.Operator):
         bone = obj.pose.bones.get("ik_foot_l")
         if bone:
             bone.bone.select = True
-        bpy.ops.transform.translate(value=(0, 0, 0.221244), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(0, 0, 0.221244),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         for bone in obj.pose.bones:
             bone.bone.select = False
@@ -3467,7 +3465,7 @@ class SNA_OT_Fix_F_Legs_92244(bpy.types.Operator):
         bone = obj.pose.bones.get("pelvis")
         if bone:
             bone.bone.select = True
-        bpy.ops.transform.translate(value=(-0, -0, -0.396858), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
+        bpy.ops.transform.translate(value=(-0, -0, -0.396858),   orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, release_confirm=True)
         # Deselect all bones
         for bone in obj.pose.bones:
             bone.bone.select = False
